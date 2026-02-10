@@ -1,0 +1,17 @@
+import 'dotenv/config';
+import { defineConfig } from 'drizzle-kit';
+
+// @ts-ignore
+if (!process.env.DATABASE_URL) {
+    throw new Error('DATABASE_URL environment variable is not set');
+}
+
+export default defineConfig({
+    schema: './src/db/schema/index.ts',
+    out: './drizzle',
+    dialect: 'postgresql',
+    dbCredentials: {
+        // @ts-ignore
+        url: process.env.DATABASE_URL
+    }
+});
