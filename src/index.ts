@@ -5,9 +5,13 @@ import cors from 'cors';
 const app = express();
 const PORT = 8000;
 
+if (!process.env.FRONTEND_URL) {
+  console.warn('FRONTEND_URL is not set — CORS will be restrictive by default');
+}
+
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: process.env.FRONTEND_URL || false,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
   }),
