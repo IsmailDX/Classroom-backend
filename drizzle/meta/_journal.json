@@ -8,6 +8,13 @@
       "when": 1770721822165,
       "tag": "0000_glossy_thing",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1771670858772,
+      "tag": "0001_striped_pandemic",
+      "breakpoints": true
     }
   ]
 }
